@@ -1,5 +1,5 @@
 # EPG_generator
-Generates EPG daily.
+Generates EPG daily
 
 ### Short URL
 ```sh
