@@ -1,4 +1,4 @@
-name: EPG Service
+name: EPG Service #CDN 
 
 on:
   workflow_dispatch:
