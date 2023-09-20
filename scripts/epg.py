@@ -81,10 +81,6 @@ def get_working_proxy():
         print("No working proxy found")
         raise NoProxyFound()
 
-        # return get_working_proxy()
-    #     print(fallback_proxy)
-    # return fallback_proxy
-
 
 def genEPG(i, c):
     global channel, programme, error, result, API, IMG, done
@@ -110,10 +106,6 @@ def genEPG(i, c):
                     "title": eachEGP['showname'],
                     "desc": eachEGP['description'],
                     "category": eachEGP['showCategory'],
-                    # "date": datetime.today().strftime('%Y%m%d'),
-                    # "star-rating": {
-                    #     "value": "10/10"
-                    # },
                     "icon": {
                         "@src": f"{IMG}/shows/{eachEGP['episodePoster']}"
                     }
@@ -135,12 +127,10 @@ def genEPG(i, c):
             print(e)
             error.append(c['channel_id'])
     done += 1
-    # print(f"{done*100/len(result):.2f} %", end="\r")
 
 
 if __name__ == "__main__":
     stime = time.time()
-    # prms = {"os": "android", "devicetype": "phone"}
     if useFallback:
         httpProxy = fallback_proxy
     else:
@@ -170,9 +160,6 @@ if __name__ == "__main__":
         epgxml = xmltodict.unparse(epgdict, pretty=True)
         with open(sys.argv[1], 'wb+') as f:
             f.write(gzip.compress(epgxml.encode('utf-8')))
-        # with open(sys.argv[1], 'rb') as f_in:
-        #     with gzip.open(sys.argv[2], 'wb+') as f_out:
-        #         f_out.write(gzip.compress(epgxml.encode('utf-8')))
         print("EPG updated", datetime.now())
         if len(error) > 0:
             print(f'error in {error}')
