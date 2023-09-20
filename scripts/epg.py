@@ -19,12 +19,7 @@ proxies = {
     "http": "http://27.107.27.13:80",
     "https": "http://20.219.180.149:3129",
 }
-# fallback_proxy = "27.107.27.13:80" #https://premiumproxy.net/search-proxy
-# fallback_proxy = "27.107.27.8:80" not working
-# fallback_proxy = "139.59.1.14:8080"
-# fallback_proxy = "20.219.235.172:3129"
 fallback_proxy = "124.123.108.15:80"
-# fallback_proxy = "144.24.102.221:3128"
 proxyTimeOut = 10000
 proxyListUrl = f"https://api.proxyscrape.com/v2/?request=getproxies&protocol=http&timeout={proxyTimeOut}&country=IN&ssl=IN&anonymity=IN"
 useFallback = False
