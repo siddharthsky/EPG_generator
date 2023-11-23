@@ -20,6 +20,7 @@ proxies = {
     "https": "http://20.219.180.149:3129",
 }
 fallback_proxy = "124.123.108.15:80"
+fallbackrout_proxy = "124.123.108.14:80"
 proxyTimeOut = 10000
 proxyListUrl = f"https://api.proxyscrape.com/v2/?request=getproxies&protocol=http&timeout={proxyTimeOut}&country=IN&ssl=IN&anonymity=IN"
 useFallback = False
